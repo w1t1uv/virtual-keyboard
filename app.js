@@ -17,53 +17,53 @@ const keyboard = document.createElement('div');
 keyboard.classList.add('keyboard');
 wrapper.append(keyboard);
 
-const smallEnglish = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'delete',
-	                 'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\',
-	                 'caps lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', 'return',
-	                 'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '▲', 'shift',
-	                 'ctrl', 'opt', 'cmd', 'space', 'cmd', 'opt', '◄', '▼', '►'];
+const smallEnglish = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Delete',
+	                 'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\',
+	                 'CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', 'Return',
+	                 'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '▲', 'Shift',
+	                 'Ctrl', 'Opt', 'Cmd', 'Space', 'Cmd', 'Opt', '◄', '▼', '►'];
 
-const shiftEnglish = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'delete',
-	                 'tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|',
-	                 'caps lock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', 'return',
-	                 'shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', '▲', 'shift',
-	                 'ctrl', 'opt', 'cmd', 'space', 'cmd', 'opt', '◄', '▼', '►'];
+const shiftEnglish = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Delete',
+	                 'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|',
+	                 'CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', 'Return',
+	                 'Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', '▲', 'Shift',
+	                 'Ctrl', 'Opt', 'Cmd', 'Space', 'Cmd', 'Opt', '◄', '▼', '►'];
 
-const capsEnglish = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'delete',
-	                'tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\',
-	                'caps lock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\'', 'return',
-	                'shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', '▲', 'shift',
-	                'ctrl', 'opt', 'cmd', 'space', 'cmd', 'opt', '◄', '▼', '►'];
+const capsEnglish = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Delete',
+	                'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\',
+	                'CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\'', 'Return',
+	                'Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', '▲', 'Shift',
+	                'Ctrl', 'Opt', 'Cmd', 'Space', 'Cmd', 'Opt', '◄', '▼', '►'];
 
-const capsShiftEnglish = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'delete',
-	                     'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}', '|',
-	                     'caps lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', '"', 'return',
-	                     'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', '▲', 'shift',
-	                     'ctrl', 'opt', 'cmd', 'space', 'cmd', 'opt', '◄', '▼', '►'];
+const capsShiftEnglish = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Delete',
+	                     'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}', '|',
+	                     'CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', '"', 'Return',
+	                     'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?', '▲', 'Shift',
+	                     'Ctrl', 'Opt', 'Cmd', 'Space', 'Cmd', 'Opt', '◄', '▼', '►'];
 
-const smallRussian = [']', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'delete',
-	                 'tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', 'ё',
-	                 'caps lock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'return',
-	                 'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '/', '▲', 'shift',
-	                 'ctrl', 'opt', 'cmd', 'space', 'cmd', 'opt', '◄', '▼', '►'];
+const smallRussian = [']', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Delete',
+	                 'Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', 'ё',
+	                 'CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Return',
+	                 'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '/', '▲', 'Shift',
+	                 'Ctrl', 'Opt', 'Cmd', 'Space', 'Cmd', 'Opt', '◄', '▼', '►'];
 
-const shiftRussian = ['[', '!', '"', '№', '%', ':', ',', '.', ';', '(', ')', '_', '+', 'delete',
-	                 'tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', 'Ё',
-	                 'caps lock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'return',
-	                 'shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '?', '▲', 'shift',
-	                 'ctrl', 'opt', 'cmd', 'space', 'cmd', 'opt', '◄', '▼', '►'];
+const shiftRussian = ['[', '!', '"', '№', '%', ':', ',', '.', ';', '(', ')', '_', '+', 'Delete',
+	                 'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', 'Ё',
+	                 'CapsLock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Return',
+	                 'Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '?', '▲', 'Shift',
+	                 'Ctrl', 'Opt', 'Cmd', 'Space', 'Cmd', 'Opt', '◄', '▼', '►'];
 
-const capsRussian = [']', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'delete',
-	                'tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', 'Ё',
-	                'caps lock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'return',
-	                'shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '/', '▲', 'shift',
-	                'ctrl', 'opt', 'cmd', 'space', 'cmd', 'opt', '◄', '▼', '►'];
+const capsRussian = [']', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Delete',
+	                'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', 'Ё',
+	                'CapsLock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Return',
+	                'Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '/', '▲', 'Shift',
+	                'Ctrl', 'Opt', 'Cmd', 'Space', 'Cmd', 'Opt', '◄', '▼', '►'];
 
-const capsShiftRussian = ['[', '!', '"', '№', '%', ':', ',', '.', ';', '(', ')', '_', '+', 'delete',
-	                     'tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', 'ё',
-	                     'caps lock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'return',
-	                     'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '?', '▲', 'shift',
- 	                     'ctrl', 'opt', 'cmd', 'space', 'cmd', 'opt', '◄', '▼', '►'];
+const capsShiftRussian = ['[', '!', '"', '№', '%', ':', ',', '.', ';', '(', ')', '_', '+', 'Delete',
+	                     'Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', 'ё',
+	                     'CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Return',
+	                     'Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '?', '▲', 'Shift',
+ 	                     'Ctrl', 'Opt', 'Cmd', 'Space', 'Cmd', 'Opt', '◄', '▼', '►'];
 
 const keysCode = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4',
 	         'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9',
@@ -89,6 +89,8 @@ function createKeyboard(arr) {
 	}
 }
 
+// createKeyboard(smallEnglish);
+
 function cleanKeyboard() {
 	document.querySelectorAll('.key').forEach((el) => {
 		el.remove();
@@ -100,6 +102,51 @@ description.classList.add('description');
 description.innerText = 'The virtual keyboard was created in the MacOS operating system.';
 wrapper.append(description);
 
+function shiftDown(event) {
+	cleanKeyboard();
+	createKeyboard(shiftEnglish);
+	document.getElementById(event).classList.add('pressed');
+}
+
+function shiftUp(event) {
+	cleanKeyboard();
+	createKeyboard(smallEnglish);
+	document.getElementById(event).classList.remove('pressed');
+}
+
+function capsDown() {
+	cleanKeyboard();
+	createKeyboard(capsEnglish);
+	document.getElementById('CapsLock').classList.add('pressed');
+}
+
+function capsUp() {
+	cleanKeyboard();
+	createKeyboard(capsShiftEnglish);
+}
+
+function shiftDownRussian(event) {
+	cleanKeyboard();
+	createKeyboard(shiftRussian);
+	document.getElementById(event).classList.add('pressed');
+}
+
+function shiftUpRussian(event) {
+	cleanKeyboard();
+	createKeyboard(smallRussian);
+	document.getElementById(event).classList.remove('pressed');
+}
+
+function capsDownRussian() {
+	cleanKeyboard();
+	createKeyboard(capsRussian);
+	document.getElementById('CapsLock').classList.toggle('pressed');
+}
+
+function capsUpRussian() {
+	cleanKeyboard();
+	createKeyboard(capsShiftRussian);
+}
 
 
 

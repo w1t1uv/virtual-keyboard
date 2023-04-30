@@ -95,6 +95,11 @@ function cleanKeyboard() {
 	});
 }
 
+const description = document.createElement('p');
+description.classList.add('description');
+description.innerText = 'The virtual keyboard was created in the MacOS operating system.';
+wrapper.append(description);
+
 
 
 

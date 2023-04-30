@@ -65,7 +65,7 @@ const capsShiftRussian = ['[', '!', '"', '№', '%', ':', ',', '.', ';', '(', ')
 	                     'shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '?', '▲', 'shift',
  	                     'ctrl', 'opt', 'cmd', 'space', 'cmd', 'opt', '◄', '▼', '►'];
 
-const keys = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4',
+const keysCode = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4',
 	         'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9',
 	         'Digit0', 'Minus', 'Equal', 'Backspace', 'Tab',
 	         'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT',
@@ -78,6 +78,22 @@ const keys = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4',
 	         'Period', 'Slash', 'ArrowUp', 'ShiftRight', 'ControlLeft',
 	         'AltLeft', 'MetaLeft', 'Space', 'MetaRight', 'AltRight',
 	         'ArrowLeft', 'ArrowDown', 'ArrowRight'];
+
+function createKeyboard(arr) {
+	for (let i = 0; i < keysCode.length; i++) {
+		const keys = document.createElement('div');
+		keys.classList.add('key');
+		keys.innerText = arr[i];
+		keys.setAttribute('id', keysCode[i]);
+		keyboard.append(keys);
+	}
+}
+
+function cleanKeyboard() {
+	document.querySelectorAll('.key').forEach((el) => {
+		el.remove();
+	});
+}
 
 
 

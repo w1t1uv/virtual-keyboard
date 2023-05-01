@@ -238,6 +238,74 @@ function space() {
 	textarea.setSelectionRange(cursor, cursor);
 }
 
+document.addEventListener('keydown', (event) => {
+	changeLanguage(event);
+	textarea.focus();
+	if (document.getElementById(event.code)) {
+		document.getElementById(event.code).classList.add('pressed');
+		if (event.code === 'CapsLock') {
+			if (english === 'true') {
+				if (capsPressed) {
+					capsPressed = false;
+					shiftUp(event.code);
+				} else {
+					capsPressed = true;
+					capsDown(event.code);
+				}
+			} else if (capsPressed) {
+				capsPressed = false;
+				shiftUpRussian(event.code);
+			} else {
+				capsPressed = true;
+				capsDownRussian(event.code);
+			}
+		}
+		if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+			if (english === 'true') {
+				if (capsPressed) {
+					capsUp(capsPressed);
+				} else {
+					shiftDown(event.code);
+				}
+			} else if (capsPressed) {
+				capsUpRussian(capsPressed);
+			} else {
+				shiftDownRussian(event.code);
+			}
+		}
+		event.preventDefault();
+		if (event.code === 'BackSpace') {
+			backspace();
+		} else if (event.code === 'Tab') {
+			tab();
+		} else if (event.code === 'Delete') {
+			del();
+		} else if (event.code === 'Enter') {
+			enter();
+		} else if (event.code === 'CapsLock'
+		|| event.code === 'ShiftLeft'
+		|| event.code === 'ShiftRight'
+		|| event.code === 'ControlLeft'
+		|| event.code === 'ControlRight'
+		|| event.code === 'ControlRight'
+		|| event.code === 'AltLeft'
+		|| event.code === 'AltRight'
+		|| event.code === 'MetaLeft'
+		|| event.code === 'MetaRight') {
+			event.preventDefault();
+		} else if (event.code === 'Space') {
+			space();
+		} else {
+			const text = Array.from(textarea.value);
+			const letter = document.getElementById(event.code).textContent;
+			text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart, letter);
+			textarea.value = text.join('');
+			cursor += 1;
+			textarea.setSelectionRange(cursor, cursor);
+		}
+	}
+});
+
 
 
 

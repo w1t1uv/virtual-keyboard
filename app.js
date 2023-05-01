@@ -208,6 +208,20 @@ function tab() {
 	textarea.setSelectionRange(cursor, cursor);
 }
 
+function del() {
+	if (textarea.selectionStart !== textarea.selectionEnd) {
+		const text = Array.from(textarea.value);
+		text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart);
+		textarea.value = text.join('');
+		textarea.setSelectionRange(cursor, cursor);
+	} else {
+		const text = Array.from(textarea.value);
+		text.splice(cursor, 1);
+		textarea.value = text.join('');
+		textarea.setSelectionRange(cursor, cursor);
+	}
+}
+
 
 
 

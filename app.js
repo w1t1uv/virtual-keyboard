@@ -230,6 +230,14 @@ function enter() {
 	textarea.setSelectionRange(cursor, cursor);
 }
 
+function space() {
+	const text = Array.from(textarea.value);
+	text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart, ' ');
+	textarea.value = text.join('');
+	cursor += 1;
+	textarea.setSelectionRange(cursor, cursor);
+}
+
 
 
 

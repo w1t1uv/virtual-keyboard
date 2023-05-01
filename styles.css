@@ -61,6 +61,12 @@ body {
     background-color: #eeeeee;
 }
 
+.key:active {
+    top: 1px;
+    background-color: #eeeeee;
+    box-shadow: none;
+}
+
 #Backspace,
 #CapsLock,
 #Enter,

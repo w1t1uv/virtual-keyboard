@@ -109,6 +109,12 @@ body {
     background-color: #999999;
 }
 
+.pressed {
+    top: 1px;
+    background-color: #eeeeee;
+    box-shadow: none;
+}
+
 .description {
     text-align: center;
     font-size: 18px;

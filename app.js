@@ -201,6 +201,15 @@ function backspace() {
 	}
 }
 
+function tab() {
+	const text = Array.from(textarea.value);
+	text.splice(textarea.selectionStart, textarea.selectionEnd - '    ');
+	cursor += 4;
+	textarea.setSelectionRange(cursor, cursor);
+}
+
+
+
 
 
 

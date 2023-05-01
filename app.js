@@ -181,6 +181,26 @@ function changeLanguage(event) {
 	}
 }
 
+let cursor = textarea.selectionStart;
+
+function backspace() {
+	if (textarea.value.length !== 0 && cursor !== 0) {
+		if (textarea.selectionStart !== textarea.selectionEnd) {
+			const text = Array.from(textarea.value);
+			text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart);
+			textarea.value = text.join('');
+			textarea.setSelectionRange(cursor, cursor);
+		} else {
+			textarea.setSelectionRange(cursor, cursor);
+			const text = Array.from(textarea.value);
+			text.splice(cursor - 1, 1);
+			textarea.value = text.join('');
+			cursor -= 1;
+			textarea.setSelectionRange(cursor, cursor);
+		}
+	}
+}
+
 
 
 

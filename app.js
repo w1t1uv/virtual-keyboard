@@ -274,7 +274,7 @@ document.addEventListener('keydown', (event) => {
 			}
 		}
 		event.preventDefault();
-		if (event.code === 'BackSpace') {
+		if (event.code === 'Backspace') {
 			backspace();
 		} else if (event.code === 'Tab') {
 			tab();
@@ -298,6 +298,105 @@ document.addEventListener('keydown', (event) => {
 		} else {
 			const text = Array.from(textarea.value);
 			const letter = document.getElementById(event.code).textContent;
+			text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart, letter);
+			textarea.value = text.join('');
+			cursor += 1;
+			textarea.setSelectionRange(cursor, cursor);
+		}
+	}
+});
+
+document.addEventListener('keyup', (event) => {
+	event.preventDefault();
+	if (document.getElementById(event.code)) {
+		pressed.delete(event.code);
+		if (event.code !== 'CapsLock') {
+			document.getElementById(event.code).classList.remove('pressed');
+		}
+		if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+			if (english === 'true') {
+				if (capsPressed) {
+					capsDown(event.code);
+				} else {
+					shiftUp(event.code);
+				}
+			} else if (capsPressed) {
+				capsDownRussian(event.code);
+			} else {
+				shiftUpRussian(event.code);
+			}
+		}
+	}
+});
+
+textarea.addEventListener('click', () => {
+	if (textarea.selectionStart !== textarea.selectionEnd) {
+		textarea.setSelectionRange(textarea.selectionStart, textarea.selectionEnd);
+		cursor = textarea.selectionStart;
+	} else {
+		cursor = textarea.selectionStart;
+		textarea.setSelectionRange(cursor, cursor);
+	}
+});
+
+keyboard.addEventListener('mousedown', (event) => {
+	textarea.focus();
+	if (event.target.id === 'CapsLock') {
+		if (english === 'true') {
+			if (capsPressed) {
+				capsPressed = false;
+				shiftUp(event.target.id);
+			} else {
+				capsPressed = true;
+				capsDown(event.target.id);
+			}
+		} else if (capsPressed) {
+			capsPressed = false;
+			shiftUpRussian(event.target.id);
+		} else {
+			capsPressed = true;
+			capsDownRussian(event.target.id);
+		}
+	}
+	if (event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight') {
+		if (english === 'true') {
+			if (capsPressed) {
+				capsUp();
+			} else {
+				shiftDown(event.target.id);
+			}
+		} else if (capsPressed) {
+			capsUpRussian();
+		} else {
+			shiftDownRussian(event.target.id);
+		}
+	}
+	event.preventDefault();
+	if (event.target.id === 'Backspace') {
+		backspace();
+	} else if (event.target.id === 'Tab') {
+		tab();
+	} else if (event.target.id === 'Delete') {
+		del();
+	} else if (event.target.id === 'Enter') {
+		enter();
+	} else if (event.target.id === 'CapsLock'
+	|| event.code === 'ShiftLeft'
+	|| event.code === 'ShiftRight'
+	|| event.code === 'ControlLeft'
+	|| event.code === 'ControlRight'
+	|| event.code === 'ControlRight'
+	|| event.code === 'AltLeft'
+	|| event.code === 'AltRight'
+	|| event.code === 'MetaLeft'
+	|| event.code === 'MetaRight') {
+		event.preventDefault();
+	} else if (event.target.id === 'Space') {
+		space();
+	} else {
+		const text = Array.from(textarea.value);
+		if (event.target.id) {
+			const letter = document.getElementById(event.target.id).textContent;
 			text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart, letter);
 			textarea.value = text.join('');
 			cursor += 1;

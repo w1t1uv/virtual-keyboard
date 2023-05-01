@@ -1,8 +1,25 @@
 .title {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 32px;
     font-weight: 700;
+}
+
+.textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 5px;
+    width: 835px;
+    height: 270px;
+    overflow: auto;
+    resize: none;
+}
+
+.textarea:focus {
+    border: 2px solid #74c365;
+    padding: 9px;
 }
 
 .keyboard {

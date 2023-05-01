@@ -222,7 +222,13 @@ function del() {
 	}
 }
 
-
+function enter() {
+	const text = Array.from(textarea.value);
+	text.splice(textarea.selectionStart, textarea.selectionEnd - textarea.selectionStart, '\n');
+	textarea.value = text.join('');
+	cursor += 1;
+	textarea.setSelectionRange(cursor, cursor);
+}
 
 
 

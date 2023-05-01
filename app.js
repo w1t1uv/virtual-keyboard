@@ -100,6 +100,11 @@ description.classList.add('description');
 description.innerText = 'The virtual keyboard was created in the MacOS operating system.';
 wrapper.append(description);
 
+const shortCut = document.createElement('p');
+shortCut.classList.add('shortCut');
+shortCut.innerText = 'Use the shortcut to change the language – Shift Left + Control.';
+wrapper.append(shortCut);
+
 function shiftDown(event) {
 	cleanKeyboard();
 	createKeyboard(shiftEnglish);

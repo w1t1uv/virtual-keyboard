@@ -405,7 +405,28 @@ keyboard.addEventListener('mousedown', (event) => {
 	}
 });
 
-
+keyboard.addEventListener('mouseup', (event) => {
+	event.preventDefault();
+	pressed.delete(event.target.id);
+	if (event.target.id) {
+		if (event.target.id !== 'CapsLock') {
+			document.getElementById(event.target.id).classList.remove('pressed');
+		}
+		if (event.target.id === 'ShiftLeft' || event.target.id === 'ShiftRight') {
+			if (english === 'true') {
+				if (capsPressed) {
+					capsDown(event.target.id);
+				} else {
+					shiftUp(event.target.id);
+				}
+			} else if (capsPressed) {
+				capsDownRussian(event.target.id);
+			} else {
+				shiftUpRussian(event.target.id);
+			}
+		}
+	}
+});
 
 
 

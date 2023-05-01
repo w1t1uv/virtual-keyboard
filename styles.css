@@ -1,3 +1,10 @@
+.title {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
 .keyboard {
     display: grid;
     gap: 5px;
@@ -30,6 +37,7 @@
 #Space {
     grid-column: span 7;
 }
+
 
 
 

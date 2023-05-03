@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 5px;
+    width: 835px;
+    height: 270px;
+    overflow: auto;
+    resize: none;
+}
+
+.keyboard {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(15, [col] 1fr);
+    grid-template-rows: repeat(5, [row] 1fr);
+    padding: 10px;
+    width: 835px;
+    margin: 0 auto;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #bcbcbc;
+}
+
+.key {
+    min-height: 40px;
+    min-width: 40px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: 0.2s;
+    box-shadow: 3px 2px 1px #000;
+    padding: 3px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.key:hover {
+    cursor: pointer;
+    background-color: #eeeeee;
+}
+
+.key:active {
+    top: 1px;
+    background-color: #eeeeee;
+    box-shadow: none;
+}
+
+#Backspace,
+#CapsLock,
+#Enter,
+#ShiftLeft,
+#ShiftRight {
+    grid-column: span 2;
+    background-color: #999999;
+}
+
+#Backspace:hover,
+#CapsLock:hover,
+#Enter:hover,
+#ShiftLeft:hover,
+#ShiftRight:hover,
+#Space:hover,
+#ControlLeft:hover,
+#AltLeft:hover,
+#MetaLeft:hover,
+#MetaRight:hover,
+#ArrowUp:hover,
+#ArrowLeft:hover,
+#ArrowDown:hover,
+#ArrowRight:hover,
+#AltRight:hover,
+#Tab:hover,
+#Delete:hover {
+    background-color: #444444;
+}
+
+#Space {
+    grid-column: span 7;
+    background-color: #999999;
+}
+
+#ControlLeft,
+#AltLeft,
+#MetaLeft,
+#MetaRight,
+#ArrowUp,
+#ArrowLeft,
+#ArrowDown,
+#ArrowRight,
+#AltRight,
+#Tab,
+#Delete {
+    background-color: #999999;
+}
+
+.pressed {
+    top: 1px;
+    background-color: #eeeeee;
+    box-shadow: none;
+}
+
+.description {
+    text-align: center;
+    font-size: 18px;
+    padding-top: 30px;
+}
+
+.shortcut {
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+
+
+
+
+
